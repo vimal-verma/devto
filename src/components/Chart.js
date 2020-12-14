@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import axios from 'axios'
 import {Line} from 'react-chartjs-2';
+import Article from './Article';
 
 
   
@@ -32,12 +33,14 @@ class Chart extends Component {
         if(this.state.articles.length < 1){
             return (
                 <div>
+                <Article article={this.state.articles}/>
                 <h5>Not Sufficent post to Show Graph of you post Reach and reaction, Add More post</h5>
                 </div>
             )
         }else{
         return (
             <div>
+                <Article article={this.state.articles}/>
                 <Line
                     data={{
                         labels: this.state.labels,
