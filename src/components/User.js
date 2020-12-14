@@ -19,13 +19,13 @@ export default class User extends Component {
         return (
             <div>
                 <h1>Home components</h1>
-                <h1>name { this.state.persons.name}</h1>
-                <h1>username { this.state.persons.username}</h1>
-                <h1>ho { this.state.persons.summary}</h1>
-                <h1>ho { this.state.persons.github_username}</h1>
-                <h1>ho { this.state.persons.twitter_username}</h1>
-                <h1>ho { this.state.persons.website_url}</h1>
-                <h1>ho { this.state.persons.location}</h1>
+                <h1>name = { this.state.persons.name}</h1>
+                <p>username = { this.state.persons.username}</p>
+                <h5>Bio { this.state.persons.summary}</h5>
+                <p>github links = https://github.com/{ this.state.persons.github_username}</p>
+                <p>twitter links = https://twitter.com/{ this.state.persons.twitter_username}</p>
+                <p>website { this.state.persons.website_url}</p>
+                <p>location { this.state.persons.location}</p>
                 <img src={this.state.persons.profile_image} alt="persion"/>
                 <Chart name={this.props.name}/>
             </div>

@@ -16,6 +16,7 @@ class Search extends Component {
       }
       myChangeHandler = (event) => {
         this.setState({username: event.target.value});
+        this.setState({isSubmitted: false})
       }
       render() {
         return (

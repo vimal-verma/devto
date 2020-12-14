@@ -8,7 +8,6 @@ import {Line} from 'react-chartjs-2';
 class Chart extends Component {
     state = {
         articles: [],
-        data : []
       }
     
       componentDidMount() {
@@ -30,9 +29,15 @@ class Chart extends Component {
     render() {
         let name = this.props.name;
         console.log(name)
+        if(this.state.articles.length < 1){
+            return (
+                <div>
+                <h5>Not Sufficent post to Show Graph of you post Reach and reaction, Add More post</h5>
+                </div>
+            )
+        }else{
         return (
             <div>
-                <h1>Chart</h1>
                 <Line
                     data={{
                         labels: this.state.labels,
@@ -80,6 +85,7 @@ class Chart extends Component {
                 />
             </div>
         )
+    }
     }
 }
 export default Chart;
