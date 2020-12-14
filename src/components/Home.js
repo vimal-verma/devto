@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import axios from 'axios'
 import Chart from './Chart'
+import Search from './Search'
 
 class Home extends Component {
     state = {
@@ -18,6 +19,7 @@ class Home extends Component {
     render() {
         return (
             <div>
+            <Search/>
                 <h1>Home components</h1>
                 <h1>{ this.state.persons.name}</h1>
                 <h1>{ this.state.persons.username}</h1>

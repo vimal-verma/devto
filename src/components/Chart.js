@@ -12,14 +12,15 @@ class Chart extends Component {
       }
     
       componentDidMount() {
-        axios.get(`https://dev.to/api/articles/?username=vimal`)
+        axios.get(`https://dev.to/api/articles/?username=ben`)
           .then(res => {
             const articles = res.data;
             console.log(articles)
             this.setState({ 
                 articles,
                 labels : articles.map(article=>{return article.id}),
-                data : articles.map(article=>{return article.public_reactions_count})
+                public_reactions_count : articles.map(article=>{return article.public_reactions_count}),
+                comments_count : articles.map(article=>{return article.comments_count})
 
             });
             console.log(this.data)
@@ -30,34 +31,49 @@ class Chart extends Component {
         return (
             <div>
                 <h1>Chart</h1>
-                <ul>
-                    { this.state.articles.map(article => <li>{article.public_reactions_count}</li>)}
-                </ul>
                 <Line
                     data={{
                         labels: this.state.labels,
                         datasets: [
                         {
-                            label: 'Rainfall',
+                            label: 'Post Reaction',
                             fill: false,
                             lineTension: 0.5,
                             backgroundColor: 'rgba(75,192,192,1)',
                             borderColor: 'rgba(0,0,0,1)',
                             borderWidth: 2,
-                            data: this.state.data
+                            data: this.state.public_reactions_count
+                        },
+                        {
+                            label: 'Post Comments',
+                            fill: false,
+                            lineTension: 0.5,
+                            backgroundColor: 'rgba(0,192,192,1)',
+                            borderColor: 'rgba(0,0,255,1)',
+                            borderWidth: 2,
+                            data: this.state.comments_count
                         }
                         ]
                     }}
                     options={{
                         title:{
                         display:true,
-                        text:'Average Rainfall per month',
+                        text:'Reaction on Dev Article',
                         fontSize:20
                         },
                         legend:{
                         display:true,
-                        position:'right'
+                        position:'top',
+                        },
+                        layout: {
+                        padding: {
+                            left: 10,
+                            right: 10,
+                            top: 10,
+                            bottom: 10
                         }
+                        },
+
                     }}
                 />
             </div>
