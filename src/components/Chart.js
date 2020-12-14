@@ -12,7 +12,7 @@ class Chart extends Component {
       }
     
       componentDidMount() {
-        axios.get(`https://dev.to/api/articles/?username=ben`)
+        axios.get(`https://dev.to/api/articles/?username=${this.props.name}`)
           .then(res => {
             const articles = res.data;
             console.log(articles)
@@ -28,6 +28,8 @@ class Chart extends Component {
       }
       
     render() {
+        let name = this.props.name;
+        console.log(name)
         return (
             <div>
                 <h1>Chart</h1>
@@ -58,7 +60,7 @@ class Chart extends Component {
                     options={{
                         title:{
                         display:true,
-                        text:'Reaction on Dev Article',
+                        text:`Reaction on Dev Article of ${name}`,
                         fontSize:20
                         },
                         legend:{
