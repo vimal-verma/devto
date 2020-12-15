@@ -49,8 +49,8 @@ class Chart extends Component {
                             label: 'Post Reaction',
                             fill: false,
                             lineTension: 0.5,
-                            backgroundColor: 'rgba(75,192,192,1)',
-                            borderColor: 'rgba(0,0,0,1)',
+                            backgroundColor: 'rgba(255,255,10,1)',
+                            borderColor: 'rgba(255,255,255,1)',
                             borderWidth: 2,
                             data: this.state.public_reactions_count
                         },
@@ -58,8 +58,8 @@ class Chart extends Component {
                             label: 'Post Comments',
                             fill: false,
                             lineTension: 0.5,
-                            backgroundColor: 'rgba(0,192,192,1)',
-                            borderColor: 'rgba(0,0,255,1)',
+                            backgroundColor: 'rgba(0,100,192,1)',
+                            borderColor: 'rgba(0,255,255,1)',
                             borderWidth: 2,
                             data: this.state.comments_count
                         }

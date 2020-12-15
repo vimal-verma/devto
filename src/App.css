@@ -4,7 +4,8 @@
 .App, input {
   text-align: center;
   font-family: 'Langar', cursive;
-
+  color: aliceblue;
+  background-color: #343a40;
 }
 .user{
   display: flex;
@@ -23,17 +24,40 @@ table {
 }
 
 td, th {
-  border: 1px solid #dddddd;
+  border: 1px solid #315275;
   text-align: left;
   padding: 8px;
 }
 
 tr:nth-child(even) {
-  background-color: #dddddd;
+  background-color: #2e3c4b;
 }
 a{
   text-decoration: none;
 }
 .bio{
   font-family: 'Dancing Script', cursive;
+}
+.main{
+  min-height: 80vh;
+}
+.footer{
+  background-color: #499297;
+  color: aliceblue;
+  padding: 10px;
+  margin-top: 50px;
+}
+a{
+  color: aliceblue;
+}
+input{
+  border-radius: 10px;
+  padding: 6px;
+  margin: 4px;
+}
+.submit{
+  background-color:rgb(43, 100, 100) ;
+}
+.submit:hover{
+  background-color: rgb(11, 39, 133);
 }

@@ -37,24 +37,27 @@ export default class User extends Component {
       if(this.state.persons.username){
         if(this.state.persons.type_of === 'organization'){
           var web = this.state.persons.url
+          var icon = <i class="fas fa-building"></i>
         }else{
           web = this.state.persons.website_url
+          icon = <i class="fas fa-user-circle"></i>
         }
+        if(this.state.persons.github_username){}
         return (
           <div>
             <div className="user">
             <div className="userimg">
             <img src={this.state.persons.profile_image} alt="persion"/>
             <h1>{ this.state.persons.name}</h1>
-            <p>({ this.state.persons.username})</p>
+            <p></p>
             </div>
             <div className="userinfo">
-                <p>type_of { this.state.persons.type_of}</p>
+                <p> {icon} ({ this.state.persons.username}) is { this.state.persons.type_of}</p>
                 <h4>Bio💖</h4>
-                <h3 className="bio">{ this.state.persons.summary}</h3>
-                <a href={'https://github.com/'+ this.state.persons.github_username}>Github {this.state.persons.github_username}</a><br/>
-                <a href={'https://twitter.com/'+ this.state.persons.twitter_username}>twitter {this.state.persons.twitter_username}</a><br/>
-                <a href={web}>website {web}</a>
+                <h1 className="bio">{ this.state.persons.summary}</h1>
+                <a target="blank" href={'https://github.com/'+ this.state.persons.github_username}><i class="fab fa-github"></i> @{this.state.persons.github_username}</a><br/>
+                <a target="blank" href={'https://twitter.com/'+ this.state.persons.twitter_username}><i class="fab fa-twitter"></i> @{this.state.persons.twitter_username}</a><br/>
+                <a target="blank" href={web}><i class="fas fa-globe"></i> {web}</a>
                 <p>location { this.state.persons.location}</p>
                 <p>joined at { this.state.persons.joined_at}</p>
             </div>

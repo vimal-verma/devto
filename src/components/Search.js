@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import User from './User'
+import Main from './Main'
 
 class Search extends Component {
     constructor(props) {
@@ -37,11 +38,13 @@ class Search extends Component {
             placeholder="Vimal"
           />
           <input
+            className="submit"
             type='submit'
             value="Submit"
           />
           </form>
           {this.state.isSubmitted &&  <User name={this.state.username}/>}
+          {!this.state.isSubmitted &&  <Main/>}
          
           </div>
         );
