@@ -39,17 +39,6 @@ class Nav extends Component {
               </li>
               <li>
                 <NavLink
-                  to="/education"
-                  tag={Link}
-                  activeStyle={{ fontWeight: "bold" }}
-                  onMouseEnter={(event) => onMouseEnter(event)}
-                  onMouseOut={(event) => onMouseOut(event)}
-                >
-                  Education
-                </NavLink>
-              </li>
-              <li>
-                <NavLink
                   to="/projects"
                   tag={Link}
                   activeStyle={{ fontWeight: "bold" }}
@@ -60,26 +49,28 @@ class Nav extends Component {
                 </NavLink>
               </li>
               <li>
-                <NavLink
-                  to="/Skill"
+                <a
+                  href="https://vimal.websense.tech/Skill"
+                  to="https://vimal.websense.tech/Skill"
                   tag={Link}
                   activeStyle={{ fontWeight: "bold" }}
                   onMouseEnter={(event) => onMouseEnter(event)}
                   onMouseOut={(event) => onMouseOut(event)}
                 >
                   Blog
-                </NavLink>
+                </a>
               </li>
               <li>
-                <NavLink
-                  to="/contact"
+                <a
+                  href="https://github.com/vimalverma558/devto"
+                  to="https://vimal.websense.tech/Skill"
                   tag={Link}
                   activeStyle={{ fontWeight: "bold" }}
                   onMouseEnter={(event) => onMouseEnter(event)}
                   onMouseOut={(event) => onMouseOut(event)}
                 >
-                  Contact Me
-                </NavLink>
+                <i class="fab fa-github"></i> Star me on Github
+                </a>
               </li>
             </ul>
           </header>
@@ -91,7 +82,7 @@ class Nav extends Component {
   export default Nav;
   const onMouseEnter = (event, color) => {
     const el = event.target;
-    el.style.backgroundColor = "#e6e6e6";
+    el.style.backgroundColor = "#2b6464";
   };
   
   const onMouseOut = (event) => {

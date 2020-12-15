@@ -21,6 +21,7 @@ img{
 table {
   border-collapse: collapse;
   width: 100%;
+  overflow-x: scroll;
 }
 
 td, th {
@@ -31,6 +32,8 @@ td, th {
 
 tr:nth-child(even) {
   background-color: #2e3c4b;
+}tr:nth-child(odd) {
+  background-color: #343a40;
 }
 a{
   text-decoration: none;
@@ -60,4 +63,13 @@ input{
 }
 .submit:hover{
   background-color: rgb(11, 39, 133);
+}
+.high{
+  min-height: 80vh;
+}
+@media (max-width: 48em) {
+  .user{
+    display: flex;
+    flex-direction: column;
+  }
 }
