@@ -27,6 +27,9 @@ export default class User extends Component {
             () => this.setState({ isLoaded: true }), 
             3000
           );
+        document.title = `👨‍💻 ${this.props.name}'s Dev Profile 👨‍💻`
+        const favicon = document.getElementById("favicon");
+        favicon.href = `https://logo.letskhabar.com/name?name=${this.props.name}&bgc=yellow&col=Black`;
       }
       
     render() {
@@ -55,13 +58,16 @@ export default class User extends Component {
                 <p> {icon} ({ this.state.persons.username}) is { this.state.persons.type_of}</p>
                 <h4>Bio💖</h4>
                 <h1 className="bio">{ this.state.persons.summary}</h1>
-                <a target="blank" href={'https://github.com/'+ this.state.persons.github_username}><i class="fab fa-github"></i> @{this.state.persons.github_username}</a><br/>
-                <a target="blank" href={'https://twitter.com/'+ this.state.persons.twitter_username}><i class="fab fa-twitter"></i> @{this.state.persons.twitter_username}</a><br/>
+                <a target="blank" href={'https://github.com/'+ this.state.persons.github_username}><i class="fab fa-github"></i> @{this.state.persons.github_username}</a><br/><br/>
+                <a target="blank" href={'https://twitter.com/'+ this.state.persons.twitter_username}><i class="fab fa-twitter"></i> @{this.state.persons.twitter_username}</a><br/><br/>
                 <a target="blank" href={web}><i class="fas fa-globe"></i> {web}</a>
-                <p>location { this.state.persons.location}</p>
+                <p><i class="fas fa-map-marker-alt"></i> { this.state.persons.location}</p>
                 <p>joined at { this.state.persons.joined_at}</p>
+                <a target="blank" href={'https://dev.to/'+ this.state.persons.username}><button className="submit">View Profile on Dev <i class="fab fa-dev"></i></button></a><br/>
+                
             </div>
             </div>
+            <hi>{this.state.persons.name}'s Article</hi>
             <Chart name={this.props.name}/>
           </div>
         )

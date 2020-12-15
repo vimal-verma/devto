@@ -18,7 +18,7 @@ class Chart extends Component {
             console.log(articles)
             this.setState({ 
                 articles,
-                labels : articles.map(article=>{return article.id}),
+                labels : articles.reverse().map(article=>{return article.id}),
                 public_reactions_count : articles.map(article=>{return article.public_reactions_count}),
                 comments_count : articles.map(article=>{return article.comments_count})
 

@@ -50,6 +50,7 @@ class Nav extends Component {
               </li>
               <li>
                 <a
+                  target="blank" 
                   href="https://vimal.websense.tech/Skill"
                   to="https://vimal.websense.tech/Skill"
                   tag={Link}
@@ -62,6 +63,7 @@ class Nav extends Component {
               </li>
               <li>
                 <a
+                  target="blank" 
                   href="https://github.com/vimalverma558/devto"
                   to="https://vimal.websense.tech/Skill"
                   tag={Link}
@@ -69,7 +71,7 @@ class Nav extends Component {
                   onMouseEnter={(event) => onMouseEnter(event)}
                   onMouseOut={(event) => onMouseOut(event)}
                 >
-                <i class="fab fa-github"></i> Star me on Github
+                <i class="fas fa-star"></i> Star me on Github <i class="fab fa-github"></i>
                 </a>
               </li>
             </ul>

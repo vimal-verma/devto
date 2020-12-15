@@ -10,6 +10,11 @@ class Search extends Component {
           isSubmitted: false
         };
       }
+      componentDidMount(){
+        document.title = `👨‍💻 DevTo App 👨‍💻`
+        const favicon = document.getElementById("favicon");
+        favicon.href = `https://logo.letskhabar.com/name?name=D&bgc=yellow&col=Black`;
+      }
       mySubmitHandler = (event) => {
         event.preventDefault();
         // alert("You are submitting " + this.state.username);
@@ -43,7 +48,7 @@ class Search extends Component {
             value="Submit"
           />
           </form>
-          {this.state.isSubmitted &&  <User name={this.state.username}/>}
+          {this.state.isSubmitted &&  <User name={this.state.username.toLowerCase()}/>}
           {!this.state.isSubmitted &&  <Main/>}
          
           </div>
