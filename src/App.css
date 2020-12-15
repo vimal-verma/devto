@@ -1,5 +1,10 @@
-.App {
+@import url('https://fonts.googleapis.com/css2?family=Langar&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600&display=swap');
+
+.App, input {
   text-align: center;
+  font-family: 'Langar', cursive;
+
 }
 .user{
   display: flex;
@@ -13,7 +18,6 @@ img{
   justify-content: space-around;
 }
 table {
-  font-family: arial, sans-serif;
   border-collapse: collapse;
   width: 100%;
 }
@@ -26,4 +30,10 @@ td, th {
 
 tr:nth-child(even) {
   background-color: #dddddd;
+}
+a{
+  text-decoration: none;
+}
+.bio{
+  font-family: 'Dancing Script', cursive;
 }

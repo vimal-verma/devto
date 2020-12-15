@@ -1,10 +1,13 @@
+
+
 /* header */
 
 .header {
     display: block;
     max-width: 90%;
-    padding: 20px 10px;
+    padding: 10px 10px;
     margin: 0px auto;
+    font-family: 'Dancing Script', cursive;
   }
   
   .header ul {
@@ -24,22 +27,16 @@
     /* color: black; */
     text-decoration: none;
   }
-  
-  .header li a:hover,
-  .header .menu-btn:hover {
-    /* background-color: #A6E1FA; */
-  }
-  
+    
   .header .logo {
     display: block;
     float: left;
     font-size: 1.5em;
     text-decoration: none;
-    margin-top: 10px;
+    margin-top: 0px;
     line-height: normal;
   }
   .header .logo-name {
-    font-family: "Agustina Regular";
     font-weight: bold;
     padding: 0 10px;
     /* color: #55198b; */
@@ -48,7 +45,7 @@
   /* menu */
   
   .menu {
-    font-family: "Google Sans Regular";
+    font-family: 'Langar', cursive;
   }
   
   .header .menu {

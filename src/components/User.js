@@ -15,6 +15,14 @@ export default class User extends Component {
             console.log(persons)
             this.setState({ persons, isLoaded :true });
           })
+          if (!this.state.isLoaded) {
+            axios.get(`https://dev.to/api/organizations/${this.props.name}`)
+            .then(res => {
+              const persons = res.data;
+              console.log(persons)
+              this.setState({ persons, isLoaded :true });
+            })            
+          }
           setTimeout(
             () => this.setState({ isLoaded: true }), 
             3000
@@ -27,6 +35,11 @@ export default class User extends Component {
     }
     else{
       if(this.state.persons.username){
+        if(this.state.persons.type_of === 'organization'){
+          var web = this.state.persons.url
+        }else{
+          web = this.state.persons.website_url
+        }
         return (
           <div>
             <div className="user">
@@ -36,13 +49,14 @@ export default class User extends Component {
             <p>({ this.state.persons.username})</p>
             </div>
             <div className="userinfo">
+                <p>type_of { this.state.persons.type_of}</p>
                 <h4>Bio💖</h4>
-                <h3>{ this.state.persons.summary}</h3>
-                <p>github links = https://github.com/{ this.state.persons.github_username}</p>
-                <p>twitter links = https://twitter.com/{ this.state.persons.twitter_username}</p>
-                <p>website { this.state.persons.website_url}</p>
+                <h3 className="bio">{ this.state.persons.summary}</h3>
+                <a href={'https://github.com/'+ this.state.persons.github_username}>Github {this.state.persons.github_username}</a><br/>
+                <a href={'https://twitter.com/'+ this.state.persons.twitter_username}>twitter {this.state.persons.twitter_username}</a><br/>
+                <a href={web}>website {web}</a>
                 <p>location { this.state.persons.location}</p>
-                <a href='https://github.com/vimalverma558/Master-Portfolio'>Master-Portfolio</a>
+                <p>joined at { this.state.persons.joined_at}</p>
             </div>
             </div>
             <Chart name={this.props.name}/>

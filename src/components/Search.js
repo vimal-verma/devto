@@ -19,17 +19,26 @@ class Search extends Component {
         this.setState({isSubmitted: false})
       }
       render() {
+        if (this.state.username) {
+          var showtext= 'Submit to See Result For ' + this.state.username
+        }else{
+          showtext= 'Enter Username of User or organization, and submit:'
+        }
+        if(this.state.isSubmitted){
+          showtext = 'Showing Result For '+ this.state.username
+        }
         return (
           <div>
           <form onSubmit={this.mySubmitHandler}>
-          <h1>Hello {this.state.username}</h1>
-          <p>Enter your name, and submit:</p>
+          <h4>{showtext}</h4>
           <input
             type='text'
             onChange={this.myChangeHandler}
+            placeholder="Vimal"
           />
           <input
             type='submit'
+            value="Submit"
           />
           </form>
           {this.state.isSubmitted &&  <User name={this.state.username}/>}
