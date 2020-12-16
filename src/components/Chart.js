@@ -9,15 +9,17 @@ import Article from './Article';
 class Chart extends Component {
     state = {
         articles: [],
+        isLoaded: false
       }
     
       componentDidMount() {
-        axios.get(`https://dev.to/api/articles/?username=${this.props.name}`)
+        axios.get(`https://dev.to/api/articles/?username=${this.props.name}&per_page=1000`)
           .then(res => {
             const articles = res.data;
             console.log(articles)
             this.setState({ 
                 articles,
+                isLoaded :true ,
                 labels : articles.reverse().map(article=>{return article.id}),
                 public_reactions_count : articles.map(article=>{return article.public_reactions_count}),
                 comments_count : articles.map(article=>{return article.comments_count})
@@ -28,9 +30,13 @@ class Chart extends Component {
       }
       
     render() {
+        if(!this.state.isLoaded){
+            return <h2 className="high">articles is Loading........</h2>
+        }
+        else{
         let name = this.props.name;
         console.log(name)
-        if(this.state.articles.length < 1){
+        if(this.state.articles.length < 2){
             return (
                 <div>
                 <Article article={this.state.articles}/>
@@ -88,6 +94,7 @@ class Chart extends Component {
                 />
             </div>
         )
+    }
     }
     }
 }

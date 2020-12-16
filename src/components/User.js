@@ -34,7 +34,7 @@ export default class User extends Component {
       
     render() {
       if(!this.state.isLoaded){
-        return <h2 className="high">Blog Post is Loading........</h2>
+        return <h2 className="high">User Information Loading........</h2>
     }
     else{
       if(this.state.persons.username){

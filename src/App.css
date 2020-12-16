@@ -79,3 +79,19 @@ button{
   color: aliceblue;
   padding: 8px 20px;
 }
+.pagination{
+  display: flex;
+  justify-content: center;
+}
+.pagination li{
+  padding: 10px 0px;
+  list-style: none;
+  background-color: #315275;
+  margin: 10px;
+  border: 2px solid rgb(255, 255, 255);
+  border-radius: 5px;
+}
+.pagination li a {
+  padding: 20px;
+
+}
