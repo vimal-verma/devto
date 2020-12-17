@@ -45,6 +45,31 @@ export default class User extends Component {
           web = this.state.persons.website_url
           icon = <i class="fas fa-user-circle"></i>
         }
+        if(this.state.persons.summary){
+          var bio = <h1 className="bio">{ this.state.persons.summary}</h1>
+        }else{
+          bio = <h1 className="bio">404 bio not found </h1>
+        }
+        if(this.state.persons.github_username){
+          var github = <div><a target="blank" href={'https://github.com/'+ this.state.persons.github_username}><i class="fab fa-github"></i> @{this.state.persons.github_username}</a><br/><br/></div>
+        }else{
+          github = ''
+        }
+        if(this.state.persons.twitter_username){
+          var twitter = <div><a target="blank" href={'https://twitter.com/'+ this.state.persons.twitter_username}><i class="fab fa-twitter"></i> @{this.state.persons.twitter_username}</a><br/><br/></div>
+        }else{
+          twitter = ''
+        }
+        if(this.state.persons.location){
+          var location = <p><i class="fas fa-map-marker-alt"></i> { this.state.persons.location}</p>
+        }else{
+          location = ''
+        }
+        if(web){
+          var webs = <a target="blank" href={web}><i class="fas fa-globe"></i> {web}</a>
+        }else{
+          webs = ''
+        }
         if(this.state.persons.github_username){}
         return (
           <div>
@@ -55,13 +80,13 @@ export default class User extends Component {
             <p></p>
             </div>
             <div className="userinfo">
-                <p> {icon} ({ this.state.persons.username}) is { this.state.persons.type_of}</p>
+                <p> {icon} ({ this.state.persons.username})</p>
                 <h4>Bio💖</h4>
-                <h1 className="bio">{ this.state.persons.summary}</h1>
-                <a target="blank" href={'https://github.com/'+ this.state.persons.github_username}><i class="fab fa-github"></i> @{this.state.persons.github_username}</a><br/><br/>
-                <a target="blank" href={'https://twitter.com/'+ this.state.persons.twitter_username}><i class="fab fa-twitter"></i> @{this.state.persons.twitter_username}</a><br/><br/>
-                <a target="blank" href={web}><i class="fas fa-globe"></i> {web}</a>
-                <p><i class="fas fa-map-marker-alt"></i> { this.state.persons.location}</p>
+                {bio}
+                {github}
+                {twitter}
+                {webs}
+                {location}
                 <p>joined at { this.state.persons.joined_at}</p>
                 <a target="blank" href={'https://dev.to/'+ this.state.persons.username}><button className="submit">View Profile on Dev <i class="fab fa-dev"></i></button></a><br/>
                 

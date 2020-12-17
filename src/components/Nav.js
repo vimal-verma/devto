@@ -16,15 +16,15 @@ class Nav extends Component {
             </label>
             <ul className="menu">
               <li>
-                <NavLink
-                  to="/"
+                <a
+                  href="/"
                   tag={Link}
                   activeStyle={{ fontWeight: "bold" }}
                   onMouseEnter={(event) => onMouseEnter(event)}
                   onMouseOut={(event) => onMouseOut(event)}
                 >
                   Home
-                </NavLink>
+                </a>
               </li>
               <li>
                 <NavLink

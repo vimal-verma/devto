@@ -40,7 +40,7 @@ class Search extends Component {
           <input
             type='text'
             onChange={this.myChangeHandler}
-            placeholder="Vimal"
+            placeholder="Username"
           />
           <input
             className="submit"

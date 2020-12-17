@@ -57,10 +57,14 @@ input, button{
   border-radius: 10px;
   padding: 6px;
   margin: 4px;
+  border: 2px solid rgb(255, 255, 255);
+  border-radius: 5px;
 }
 .submit{
   background-color:rgb(43, 100, 100) ;
   cursor: pointer;
+  border: 2px solid rgb(255, 255, 255);
+  border-radius: 5px;
 }
 .submit:hover{
   background-color: rgb(11, 39, 133);
@@ -86,12 +90,28 @@ button{
 .pagination li{
   padding: 10px 0px;
   list-style: none;
-  background-color: #315275;
+  background-color: rgb(43, 100, 100);
   margin: 10px;
   border: 2px solid rgb(255, 255, 255);
   border-radius: 5px;
+}.pagination li:hover{
+  background-color: rgb(11, 39, 133);;
 }
 .pagination li a {
   padding: 20px;
 
+}
+.devusers{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.devuser{
+  margin: 30px;
+  padding: 5px 20px;
+  border: 2px solid rgb(255, 255, 255);
+  border-radius: 5px;
+  position: relative;
+  width: 250px;
+  background-color: #303f4e;
 }

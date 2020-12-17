@@ -37,12 +37,16 @@ class Chart extends Component {
         let name = this.props.name;
         console.log(name)
         if(this.state.articles.length < 2){
+            if (this.state.articles.length === 1) {
             return (
                 <div>
                 <Article article={this.state.articles}/>
                 <h5>Not Sufficent post to Show Graph of you post Reach and reaction, Add More post</h5>
                 </div>
             )
+            }else{
+            return <h1>No Post</h1>
+            }
         }else{
         return (
             <div>

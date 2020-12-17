@@ -45,7 +45,7 @@ class Article extends Component {
                 <th>Post Date</th>
                 <th>Post Tags</th>
                 </tr>
-                {this.props.article.slice(this.state.firstarticle,this.state.lastarticle).map(article=>{return <tr>
+                {this.props.article.reverse().slice(this.state.firstarticle,this.state.lastarticle).map(article=>{return <tr>
                  <td><a target="blank" href={article.url}>{article.id}</a></td>
                  <td><a target="blank" href={article.url}>{article.title}</a></td>
                  <td>{article.public_reactions_count}</td>
