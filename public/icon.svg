@@ -1,0 +1,9 @@
+<svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+<style>
+  .header { font: 600 45px 'Segoe UI', Ubuntu, Sans-Serif; fill: Black;}   
+</style>
+<rect data-testid="card-bg" x="0.5" y="0.5" rx="4.5" height="99%" stroke="#E4E2E2" width="99%" fill="yellow" stroke-opacity="1"/>
+<g fill="#fff" text-anchor="middle" font-family="Verdana,Geneva,DejaVu Sans,sans-serif" text-rendering="geometricPrecision" font-size="15">
+<text x="24" y="37" class="header" textLength="40">D</text>
+</g>
+</svg>
