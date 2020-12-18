@@ -108,6 +108,7 @@ button{
   position: relative;
   width: 250px;
   background-color: #303f4e;
+  box-shadow: 0 4px 8px 0 rgba(236, 236, 236, 0.5), 0 6px 20px 0 rgba(236, 236, 236, 0.5);
 }
 .sm-item{
   border-radius: 0px;

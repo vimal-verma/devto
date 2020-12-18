@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import axios from 'axios'
 import Chart from './Chart'
 import Share from './Share'
+import ReactTooltip from 'react-tooltip'
 
 export default class User extends Component {
     state = {
@@ -59,12 +60,12 @@ export default class User extends Component {
           bio = <h1 className="bio">404 bio not found </h1>
         }
         if(this.state.persons.github_username){
-          var github = <div><a target="blank" href={'https://github.com/'+ this.state.persons.github_username}><i class="fab fa-github"></i> @{this.state.persons.github_username}</a><br/><br/></div>
+          var github = <div><a data-tip data-for='ugithub' target="blank" href={'https://github.com/'+ this.state.persons.github_username}><i class="fab fa-github"></i> @{this.state.persons.github_username}</a><br/><br/></div>
         }else{
           github = ''
         }
         if(this.state.persons.twitter_username){
-          var twitter = <div><a target="blank" href={'https://twitter.com/'+ this.state.persons.twitter_username}><i class="fab fa-twitter"></i> @{this.state.persons.twitter_username}</a><br/><br/></div>
+          var twitter = <div><a data-tip data-for='utwitter' target="blank" href={'https://twitter.com/'+ this.state.persons.twitter_username}><i class="fab fa-twitter"></i> @{this.state.persons.twitter_username}</a><br/><br/></div>
         }else{
           twitter = ''
         }
@@ -74,7 +75,7 @@ export default class User extends Component {
           location = ''
         }
         if(web){
-          var webs = <a target="blank" href={web}><i class="fas fa-globe"></i> {web}</a>
+          var webs = <a data-tip data-for='uweb' target="blank" href={web}><i class="fas fa-globe"></i> {web}</a>
         }else{
           webs = ''
         }
@@ -103,6 +104,15 @@ export default class User extends Component {
             </div>
             <hi>{this.state.persons.name}'s Article</hi>
             <Chart name={this.props.name}/>
+            <ReactTooltip place="right" id='utwitter' type='light'>
+            <span>Twitter Account</span>
+            </ReactTooltip>
+            <ReactTooltip place="right" id='ugithub' type='light'>
+            <span>Github Account</span>
+            </ReactTooltip>
+            <ReactTooltip place="right" id='uweb' type='light'>
+            <span>Website</span>
+            </ReactTooltip>
           </div>
         )
       }else{

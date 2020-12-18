@@ -39,13 +39,13 @@ class Nav extends Component {
               </li>
               <li>
                 <NavLink
-                  to="/projects"
+                  to="/user"
                   tag={Link}
                   activeStyle={{ fontWeight: "bold" }}
                   onMouseEnter={(event) => onMouseEnter(event)}
                   onMouseOut={(event) => onMouseOut(event)}
                 >
-                  Projects
+                  User
                 </NavLink>
               </li>
               <li>

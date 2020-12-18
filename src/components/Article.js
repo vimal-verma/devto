@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import Pagination from "react-js-pagination";
+import ReactTooltip from 'react-tooltip'
 
 class Article extends Component {
     constructor(props) {
@@ -46,7 +47,7 @@ class Article extends Component {
                 <th>Post Tags</th>
                 </tr>
                 {this.props.article.slice(this.state.firstarticle,this.state.lastarticle).map(article=>{return <tr>
-                 <td><a target="blank" href={article.url}>{article.id}</a></td>
+                 <td><a data-tip data-for='post' target="blank" href={article.url}>{article.id}</a></td>
                  <td><a target="blank" href={article.url}>{article.title}</a></td>
                  <td>{article.public_reactions_count}</td>
                  <td>{article.comments_count}</td>
@@ -55,6 +56,9 @@ class Article extends Component {
                 </tr>})}
                 </table>
                 {pagination_button}
+                <ReactTooltip id='post' type='light'>
+                <span>Click to See post</span>
+                </ReactTooltip>
             </div>
         )            
     }else{
