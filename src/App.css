@@ -72,12 +72,6 @@ input, button{
 .high{
   min-height: 80vh;
 }
-@media (max-width: 48em) {
-  .user{
-    display: flex;
-    flex-direction: column;
-  }
-}
 button{
   font-family: 'Langar', cursive;
   color: aliceblue;
@@ -114,4 +108,37 @@ button{
   position: relative;
   width: 250px;
   background-color: #303f4e;
+}
+.sm-item{
+  border-radius: 0px;
+  margin: 5px;
+}
+.red{
+  color: red;
+}
+.share{
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  right: 0px;
+  top: 300px;
+}
+
+
+
+
+@media (min-width: 48em) {
+  .userinfo{
+    max-width: 50%;
+  }
+}
+@media (max-width: 48em) {
+  .user{
+    display: flex;
+    flex-direction: column;
+  }
+  .pagination li{
+    padding: 10px 0px;
+    margin: 2px;
+  }
 }

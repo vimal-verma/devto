@@ -4,6 +4,7 @@ import Home from './components/Home';
 import About from './components/About'
 import Project from './components/Project'
 import Error from './components/Error'
+import Userroute from './components/Userroute'
 
 function App() {
   return (
@@ -12,6 +13,7 @@ function App() {
       <Switch> 
         <Route exact path='/' component={Home}></Route> 
         <Route exact path='/about' component={About}></Route> 
+        <Route exact path='/user/:username' component={Userroute}></Route> 
         <Route exact path='/contact' component={Home}></Route>
         <Route exact path='/education' component={Home}></Route>
         <Route exact path='/projects' component={Project}></Route>
