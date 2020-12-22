@@ -7,15 +7,17 @@ import Nav from './Nav'
 
 export default class Project extends Component {
     componentDidMount(){
-        document.title = `Project | DevTo App 👨‍💻`
+        document.title = `User | DevTo App 👨‍💻`
         const favicon = document.getElementById("favicon");
-        favicon.href = `https://logo.letskhabar.com/name?name=P&bgc=yellow&col=Black`;
+        favicon.href = `https://logo.letskhabar.com/name?name=U&bgc=yellow&col=Black`;
       }
     render() {
         return (
             <div>
                 <Nav/>
-                <h1 className="main">User</h1>
+                <div className="main">
+                    <h1>Hello User</h1>
+                </div>
                 <Footer/>
             </div>
         )

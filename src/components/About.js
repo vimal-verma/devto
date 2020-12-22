@@ -12,7 +12,10 @@ export default class About extends Component {
         return (
             <div>
             <Nav/>
-                <h1 className="main">About page</h1>
+                <div className="main">
+                    <h1>About page</h1>
+                    <h4> </h4>
+                </div>
             <Footer/>
             </div>
         )

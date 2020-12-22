@@ -43,16 +43,11 @@ export default class User extends Component {
         if(this.state.persons.type_of === 'organization'){
           var web = this.state.persons.url
           var icon = <i class="fas fa-building"></i>
-          var pic = <div>
-            <img src={this.state.persons.profile_image} alt="organization img"/>
-            <h5>Sorry If image is not available</h5>
-            <h3>There is a Problem in Dev.to Api</h3>
-            <a className="red" target="blank" href="https://github.com/forem/forem/issues/11937">Know More....</a>
-          </div>
+          var pic = <img width="300px" src={this.state.persons.profile_image} alt="organization img"/>
         }else{
           web = this.state.persons.website_url
           icon = <i class="fas fa-user-circle"></i>
-          pic = <img src={this.state.persons.profile_image} alt="persion"/>
+          pic = <img width="300px" src={this.state.persons.profile_image} alt="user img"/>
         }
         if(this.state.persons.summary){
           var bio = <h1 className="bio">{ this.state.persons.summary}</h1>
