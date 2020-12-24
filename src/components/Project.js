@@ -16,7 +16,8 @@ export default class Project extends Component {
             <div>
                 <Nav/>
                 <div className="main">
-                    <h1>Hello User</h1>
+                    <h3>You Can Share your Profile as </h3>
+                    <code>https://websense.tech/user/your_devto_username</code> 
                 </div>
                 <Footer/>
             </div>
