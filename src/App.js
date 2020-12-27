@@ -4,7 +4,7 @@ import Home from './components/Home';
 import About from './components/About'
 import Project from './components/Project'
 import Error from './components/Error'
-import Api from './components/Api'
+import Api from './Api/Home'
 import Userroute from './components/Userroute'
 
 function App() {

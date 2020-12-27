@@ -6,7 +6,7 @@ import Article from './Article';
 
   
 
-class Api extends Component {
+class Chart extends Component {
     state = {
         articles: [],
         isLoaded: false
@@ -17,7 +17,7 @@ class Api extends Component {
             method: 'get',
             url: 'https://cors-anywhere.herokuapp.com/https://dev.to/api/articles/me',
             headers: { 
-                'api-key': `iMvdVNyLLrvUJYCpESkxGmAg`
+                'api-key': this.props.apikey
             }
             };
         
@@ -35,9 +35,6 @@ class Api extends Component {
             });
             console.log(this.data)
           })
-          .catch(err => {
-            console.log(err);
-        })
       }
       
     render() {
@@ -113,4 +110,4 @@ class Api extends Component {
     }
     }
 }
-export default Api;
+export default Chart;
