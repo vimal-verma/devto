@@ -28,6 +28,17 @@ class Nav extends Component {
               </li>
               <li>
                 <NavLink
+                  to="/api"
+                  tag={Link}
+                  activeStyle={{ fontWeight: "bold" }}
+                  onMouseEnter={(event) => onMouseEnter(event)}
+                  onMouseOut={(event) => onMouseOut(event)}
+                >
+                  Api
+                </NavLink>
+              </li>
+              <li>
+                <NavLink
                   to="/about"
                   tag={Link}
                   activeStyle={{ fontWeight: "bold" }}
