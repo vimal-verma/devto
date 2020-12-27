@@ -12,7 +12,7 @@ export default class Footer extends Component {
             <a data-tip data-for='dev' target="blank" href="https://dev.to/vimal/"><img className="sm-item" src="https://logo.letskhabar.com/img?tool=dev" alt="Project" /></a>
             <a data-tip data-for='website' target="blank" href="https://vimal.websense.tech/"><img className="sm-item" src="https://logo.letskhabar.com/img?tool=globe" alt="Project" /></a>
             </div>            
-            <p>Made with <span role="img" aria-label="Heart"> ❤️ </span> by <a href="https://github.com/vimalverma558/">Vimal Kumar</a> </p>
+            <p>Made with <span role="img" aria-label="Heart"> ❤️ </span> by <a className="blue" href="https://github.com/vimalverma558/">Vimal Kumar</a> </p>
             <ReactTooltip id='github' type='light'>
             <span>github</span>
             </ReactTooltip>

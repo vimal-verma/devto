@@ -3,6 +3,7 @@ import axios from 'axios'
 import Chart from './Chart'
 import Share from './Share'
 import ReactTooltip from 'react-tooltip'
+import Orguser from './Orguser'
 
 export default class User extends Component {
     state = {
@@ -44,10 +45,12 @@ export default class User extends Component {
           var web = this.state.persons.url
           var icon = <i class="fas fa-building"></i>
           var pic = <img width="300px" src={this.state.persons.profile_image} alt="organization img"/>
+          var showmember = <Orguser name={this.props.name}/>
         }else{
           web = this.state.persons.website_url
           icon = <i class="fas fa-user-circle"></i>
           pic = <img width="300px" src={this.state.persons.profile_image} alt="user img"/>
+          showmember = ''
         }
         if(this.state.persons.summary){
           var bio = <h1 className="bio">{ this.state.persons.summary}</h1>
@@ -99,6 +102,7 @@ export default class User extends Component {
             </div>
             <hi>{this.state.persons.name}'s Article</hi>
             <Chart name={this.props.name}/>
+            {showmember}
             <ReactTooltip place="right" id='utwitter' type='light'>
             <span>Twitter Account</span>
             </ReactTooltip>

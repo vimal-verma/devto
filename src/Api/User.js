@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import axios from 'axios'
 import Chart from './Chart'
 import ReactTooltip from 'react-tooltip'
+import Follower from './Follower'
 
 export default class User extends Component {
     state = {
@@ -87,6 +88,7 @@ export default class User extends Component {
             </div>
             <hi>{this.state.persons.name}'s Article</hi>
             <Chart apikey={this.props.apikey}/>
+            <Follower apikey={this.props.apikey}/>
             <ReactTooltip place="right" id='utwitter' type='light'>
             <span>Twitter Account</span>
             </ReactTooltip>
