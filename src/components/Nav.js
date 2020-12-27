@@ -7,24 +7,24 @@ class Nav extends Component {
       return (
         <div>
           <header className="header">
-            <NavLink to="/" tag={Link} className="logo">
+            <a href="/" tag={Link} className="logo">
             <h2>Dev Finder</h2>
-            </NavLink>
+            </a>
             <input className="menu-btn" type="checkbox" id="menu-btn" />
             <label className="menu-icon" htmlFor="menu-btn">
               <span className="navicon"></span>
             </label>
             <ul className="menu">
               <li>
-                <a
-                  href="/"
+                <NavLink
+                  to="/"
                   tag={Link}
                   activeStyle={{ fontWeight: "bold" }}
                   onMouseEnter={(event) => onMouseEnter(event)}
                   onMouseOut={(event) => onMouseOut(event)}
                 >
                   Home
-                </a>
+                </NavLink>
               </li>
               <li>
                 <NavLink

@@ -24,13 +24,9 @@ export default class User extends Component {
             console.log(persons)
             this.setState({ persons, isLoaded :true });
           })
-          setTimeout(
-            () => this.setState({ isLoaded: true }), 
-            3000
-          );
-        document.title = `👨‍💻 ${this.props.apikey}'s Dev Profile 👨‍💻`
+        document.title = `👨‍💻 Your's Dev Profile 👨‍💻`
         const favicon = document.getElementById("favicon");
-        favicon.href = `https://logo.letskhabar.com/name?name=${this.props.apikey}&bgc=yellow&col=Black`;
+        favicon.href = `https://logo.letskhabar.com/name?name=Y&bgc=yellow&col=Black`;
       }
       
     render() {
@@ -39,15 +35,9 @@ export default class User extends Component {
     }
     else{
       if(this.state.persons.username){
-        if(this.state.persons.type_of === 'organization'){
-          var web = this.state.persons.url
-          var icon = <i class="fas fa-building"></i>
-          var pic = <img width="300px" src={this.state.persons.profile_image} alt="organization img"/>
-        }else{
-          web = this.state.persons.website_url
-          icon = <i class="fas fa-user-circle"></i>
-          pic = <img width="300px" src={this.state.persons.profile_image} alt="user img"/>
-        }
+        var web = this.state.persons.website_url
+        var icon = <i class="fas fa-user-circle"></i>
+        var pic = <img width="300px" src={this.state.persons.profile_image} alt="user img"/>
         if(this.state.persons.summary){
           var bio = <h1 className="bio">{ this.state.persons.summary}</h1>
         }else{

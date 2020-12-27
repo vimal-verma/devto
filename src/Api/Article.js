@@ -41,6 +41,7 @@ class Article extends Component {
                 <tr>
                 <th>Post id</th>
                 <th>Post title</th>
+                <th>Post Views</th>
                 <th>Post react</th>
                 <th>Post comment</th>
                 <th>Post Date</th>
@@ -49,10 +50,11 @@ class Article extends Component {
                 {this.props.article.slice(this.state.firstarticle,this.state.lastarticle).map(article=>{return <tr>
                  <td><a data-tip data-for='post' target="blank" href={article.url}>{article.id}</a></td>
                  <td><a target="blank" href={article.url}>{article.title}</a></td>
+                 <td>{article.page_views_count}</td>
                  <td>{article.public_reactions_count}</td>
                  <td>{article.comments_count}</td>
-                 <td>{article.readable_publish_date}</td>
-                 <td>{article.tags}</td>
+                 <td>{article.published_timestamp}</td>
+                 <td>{article.tag_list.map(tag =>{return `${tag}, `})}</td>
                 </tr>})}
                 </table>
                 {pagination_button}

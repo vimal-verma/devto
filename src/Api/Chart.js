@@ -29,6 +29,7 @@ class Chart extends Component {
                 articles,
                 isLoaded :true ,
                 labels : articles.reverse().map(article=>{return article.id}),
+                page_views_count : articles.map(article=>{return article.page_views_count}),
                 public_reactions_count : articles.map(article=>{return article.public_reactions_count}),
                 comments_count : articles.map(article=>{return article.comments_count})
 
@@ -64,11 +65,20 @@ class Chart extends Component {
                         labels: this.state.labels,
                         datasets: [
                         {
-                            label: 'Post Reaction',
+                            label: 'Post Views',
                             fill: false,
                             lineTension: 0.5,
                             backgroundColor: 'rgba(255,255,10,1)',
                             borderColor: 'rgba(255,255,255,1)',
+                            borderWidth: 2,
+                            data: this.state.page_views_count
+                        },
+                        {
+                            label: 'Post Reaction',
+                            fill: false,
+                            lineTension: 0.5,
+                            backgroundColor: 'rgba(0,255,10,1)',
+                            borderColor: 'rgba(255,0,255,1)',
                             borderWidth: 2,
                             data: this.state.public_reactions_count
                         },
