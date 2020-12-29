@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import axios from 'axios'
 import {Line} from 'react-chartjs-2';
 import Article from './Article';
+import Tag from './Tag';
 
 
   
@@ -96,6 +97,7 @@ class Chart extends Component {
 
                     }}
                 />
+                <Tag article={this.state.articles}/>
             </div>
         )
     }
