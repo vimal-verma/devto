@@ -55,12 +55,15 @@ class Tag extends Component {
       }
 
     render() {
+        var i =0
         var arr = this.props.article.map(tag =>{
             return tag.tag_list.map(ta =>{
+                i++;
                 return ta
             }
             )
         })
+        console.log(i)
         var newArray = Array.prototype.concat.apply([], arr);
         console.log(newArray)
         var tagused = this.maxNumberOfStrings(newArray)
@@ -71,6 +74,15 @@ class Tag extends Component {
         console.log(tags)
         console.log(tagsCount)
         console.log(tagcol)
+        var articlesLenth = this.props.article.length
+        console.log(articlesLenth)
+        console.log(tags[0])
+        console.log(this.props.isUser)
+        if(this.props.isUser){
+        var user = this.props.article[0].user.name
+        }else{
+            user = this.props.article[0].organization.name
+        }
         return (
             <div>
             <h1>Tags Used in articles</h1>
@@ -83,6 +95,23 @@ class Tag extends Component {
                 labels: tags
             }}
             />
+            <div className="devusers">
+               <div className="devuser">
+                    <h1>{user} is using {tags[0]} Tag in {Math.round(Number(tagsCount[0])/Number(articlesLenth)*100*100)/100}% articles</h1>
+                </div>
+                <div className="devuser">
+                    <h1>{user} is using {tags[1]} Tag in {Math.round(Number(tagsCount[1])/Number(articlesLenth)*100*100)/100}% articles</h1>
+                </div>
+                <div className="devuser">
+                    <h1>{user} is using {tags[2]} Tag in {Math.round(Number(tagsCount[2])/Number(articlesLenth)*100*100)/100}% articles</h1>
+                </div>
+                <div className="devuser">
+                    <h1>{user} is using Total {tags.length} Differents Tags in {articlesLenth} articles</h1>
+                </div>
+                <div className="devuser">
+                    <h1>{user} is using {i} Tags in {articlesLenth} articles</h1>
+                </div>
+            </div>
             </div>
         )            
     }

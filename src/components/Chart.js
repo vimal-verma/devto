@@ -97,7 +97,7 @@ class Chart extends Component {
 
                     }}
                 />
-                <Tag article={this.state.articles}/>
+                <Tag isUser={this.props.isUser} article={this.state.articles}/>
             </div>
         )
     }

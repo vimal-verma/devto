@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import axios from 'axios'
 import {Line} from 'react-chartjs-2';
 import Article from './Article';
+import Tag from '../components/Tag'
 
 
   
@@ -114,6 +115,7 @@ class Chart extends Component {
 
                     }}
                 />
+                <Tag isUser={true} article={this.state.articles}/>
             </div>
         )
     }
