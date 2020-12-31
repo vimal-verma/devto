@@ -55,15 +55,22 @@ class Tag extends Component {
       }
 
     render() {
-        var i =0
-        var arr = this.props.article.map(tag =>{
-            return tag.tag_list.map(ta =>{
-                i++;
+        var numoftag =0
+        var numofLikes= 0
+        var numofComments= 0
+        var arr = this.props.article.map(art =>{
+            return art.tag_list.map(ta =>{
+                numoftag++;
                 return ta
             }
             )
         })
-        console.log(i)
+        this.props.article.forEach(article =>{
+            numofLikes = numofLikes + article.public_reactions_count
+            numofComments = numofComments + article.comments_count
+        }
+        )
+        console.log(numofComments, numofLikes, numoftag)
         var newArray = Array.prototype.concat.apply([], arr);
         console.log(newArray)
         var tagused = this.maxNumberOfStrings(newArray)
@@ -95,6 +102,7 @@ class Tag extends Component {
                 labels: tags
             }}
             />
+            <h1>Some Statistics</h1>
             <div className="devusers">
                <div className="devuser">
                     <h1>{user} is using {tags[0]} Tag in {Math.round(Number(tagsCount[0])/Number(articlesLenth)*100*100)/100}% articles</h1>
@@ -109,7 +117,13 @@ class Tag extends Component {
                     <h1>{user} is using Total {tags.length} Differents Tags in {articlesLenth} articles</h1>
                 </div>
                 <div className="devuser">
-                    <h1>{user} is using {i} Tags in {articlesLenth} articles</h1>
+                    <h1>{user} is using {numoftag} Tags in {articlesLenth} articles</h1>
+                </div>
+                <div className="devuser">
+                    <h1>{user} articles got Total {numofLikes} Reactions in {articlesLenth} articles</h1>
+                </div>
+                <div className="devuser">
+                    <h1>{user} articles received Total {numofComments} comments in {articlesLenth} articles</h1>
                 </div>
             </div>
             </div>

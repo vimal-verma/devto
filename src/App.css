@@ -10,9 +10,12 @@
 .user{
   display: flex;
   justify-content: space-around;
+  padding-top: 40px;
+  padding-bottom: 40px;
 }
 .userimg img{
   border-radius: 50%;
+  border: 5px solid #499297;
 }
 .article{
   display: flex;
