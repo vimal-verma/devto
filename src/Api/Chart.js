@@ -41,7 +41,10 @@ class Chart extends Component {
       
     render() {
         if(!this.state.isLoaded){
-            return <h2 className="high">articles is Loading........</h2>
+            return <div className="high">
+            <h1>articles is Loading........</h1>
+            <div className="loader"></div>
+            </div>
         }
         else{
         let name = this.props.name;
@@ -111,6 +114,14 @@ class Chart extends Component {
                             top: 10,
                             bottom: 10
                         }
+                        },
+                        onClick: (e, element) => {
+                            if (element.length > 0) {
+                            var ind = element[0]._index;
+                            console.log(ind);
+                            var win = window.open(this.state.articles[ind].url, '_blank');
+                            win.focus();
+                            }
                         },
 
                     }}

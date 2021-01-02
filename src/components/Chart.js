@@ -32,7 +32,10 @@ class Chart extends Component {
       
     render() {
         if(!this.state.isLoaded){
-            return <h2 className="high">articles is Loading........</h2>
+            return <div className="high">
+            <h1>articles is Loading........</h1>
+            <div className="loader"></div>
+            </div>
         }
         else{
         let name = this.props.name;

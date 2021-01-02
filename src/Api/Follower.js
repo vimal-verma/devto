@@ -25,7 +25,10 @@ export default class Follower extends Component {
     }
     render() {
         if(!this.state.isLoaded){
-            return <h2 className="high">Followers Information Loading........</h2>
+            return <div className="high">
+            <h1>Followers Information Loading........</h1>
+            <div className="loader"></div>
+            </div>
         }
         else{
         return (

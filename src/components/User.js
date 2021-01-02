@@ -25,11 +25,11 @@ export default class User extends Component {
               console.log(persons)
               this.setState({ persons, isLoaded :true });
             })            
+            .catch(err =>{
+              console.log(err)
+              this.setState({ isLoaded: true })
+            })          
           }
-          setTimeout(
-            () => this.setState({ isLoaded: true }), 
-            3000
-          );
         document.title = `👨‍💻 ${this.props.name}'s Dev Profile 👨‍💻`
         const favicon = document.getElementById("favicon");
         favicon.href = `https://logo.letskhabar.com/name?name=${this.props.name}&bgc=yellow&col=Black`;
@@ -37,7 +37,10 @@ export default class User extends Component {
       
     render() {
       if(!this.state.isLoaded){
-        return <h2 className="high">User Information Loading........</h2>
+        return <div className="high">
+          <h1>User Information Loading........</h1>
+          <div className="loader"></div>
+        </div>
     }
     else{
       if(this.state.persons.username){
