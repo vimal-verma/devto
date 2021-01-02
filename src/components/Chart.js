@@ -94,6 +94,14 @@ class Chart extends Component {
                             bottom: 10
                         }
                         },
+                        onClick: (e, element) => {
+                            if (element.length > 0) {
+                            var ind = element[0]._index;
+                            console.log(ind);
+                            var win = window.open(this.state.articles[ind].url, '_blank');
+                            win.focus();
+                            }
+                        },
 
                     }}
                 />
