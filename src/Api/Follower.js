@@ -19,7 +19,7 @@ export default class Follower extends Component {
         axios(config)
             .then(res => {
               const Followers = res.data;
-              console.log(Followers)
+              // console.log(Followers)
               this.setState({ Followers, isLoaded :true });
             })
     }

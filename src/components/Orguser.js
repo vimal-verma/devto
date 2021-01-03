@@ -11,7 +11,7 @@ export default class Orguser extends Component {
         axios.get(`https://dev.to/api/organizations/${this.props.name}/users?per_page=1000`)
             .then(res => {
               const Followers = res.data;
-              console.log(Followers)
+              // console.log(Followers)
               this.setState({ Followers, isLoaded :true });
             })
     }

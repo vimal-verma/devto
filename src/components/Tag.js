@@ -17,12 +17,12 @@ class Tag extends Component {
             }
         })
     
-        console.log(objectOfStrings);
+        // console.log(objectOfStrings);
     
         let arrayOfOccurrences=Object.values(objectOfStrings).sort((a,b)=>{return b-a});
         
     
-        console.log(arrayOfOccurrences);
+        // console.log(arrayOfOccurrences);
     
         let maxOccurredStrs=[];
     
@@ -40,7 +40,7 @@ class Tag extends Component {
             }
         })
     
-        console.log(maxOccurredStrs);
+        // console.log(maxOccurredStrs);
         return maxOccurredStrs
     }
 
@@ -50,7 +50,7 @@ class Tag extends Component {
         for (var i = 0; i < 6; i++) {
           color += letters[Math.floor(Math.random() * 16)];
         }
-        // console.log(color)
+        // // console.log(color)
         return color;
       }
 
@@ -70,21 +70,21 @@ class Tag extends Component {
             numofComments = numofComments + article.comments_count
         }
         )
-        console.log(numofComments, numofLikes, numoftag)
+        // console.log(numofComments, numofLikes, numoftag)
         var newArray = Array.prototype.concat.apply([], arr);
-        console.log(newArray)
+        // console.log(newArray)
         var tagused = this.maxNumberOfStrings(newArray)
-        console.log(tagused)
+        // console.log(tagused)
         var tags = tagused.map(tag =>{return tag.name})
         var tagsCount = tagused.map(tag =>{return tag.count})
         var tagcol = tagused.map(()=> {return this.getRandomColor()})
-        console.log(tags)
-        console.log(tagsCount)
-        console.log(tagcol)
+        // console.log(tags)
+        // console.log(tagsCount)
+        // console.log(tagcol)
         var articlesLenth = this.props.article.length
-        console.log(articlesLenth)
-        console.log(tags[0])
-        console.log(this.props.isUser)
+        // console.log(articlesLenth)
+        // console.log(tags[0])
+        // console.log(this.props.isUser)
         if(this.props.isUser){
         var user = this.props.article[0].user.name
         }else{

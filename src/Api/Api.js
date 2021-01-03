@@ -24,7 +24,7 @@ class Api extends Component {
         axios(config)
           .then(res => {
             const articles = res.data;
-            console.log(articles)
+            // console.log(articles)
             this.setState({ 
                 articles,
                 isLoaded :true ,
@@ -33,10 +33,10 @@ class Api extends Component {
                 comments_count : articles.map(article=>{return article.comments_count})
 
             });
-            console.log(this.data)
+            // console.log(this.data)
           })
           .catch(err => {
-            console.log(err);
+            // console.log(err);
         })
       }
       
@@ -46,7 +46,7 @@ class Api extends Component {
         }
         else{
         let name = this.props.name;
-        console.log(name)
+        // console.log(name)
         if(this.state.articles.length < 2){
             if (this.state.articles.length === 1) {
             return (

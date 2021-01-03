@@ -12,7 +12,7 @@ class Article extends Component {
         };
       }
       handlePageChange(pageNumber) {
-        console.log(`active page is ${pageNumber}`);
+        // console.log(`active page is ${pageNumber}`);
         this.setState({
             activePage: pageNumber,
             firstarticle : (pageNumber)*10-10,
@@ -21,8 +21,8 @@ class Article extends Component {
       }
 
     render() {
-        console.log("aticle" +this.props.article.length)
-        console.log(this.state.activePage ,  this.state.firstarticle, this.state.lastarticle)
+        // console.log("aticle" +this.props.article.length)
+        // console.log(this.state.activePage ,  this.state.firstarticle, this.state.lastarticle)
         if(this.props.article.length>10){
         var pagination_button =  <Pagination
                              activePage={this.state.activePage}

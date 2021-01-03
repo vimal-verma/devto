@@ -10,7 +10,7 @@ export default class Main extends Component {
         };
       }
     SeeUser = (username) => {
-        console.log('this is:', this);
+        // console.log('this is:', this);
         this.setState({
             isSubmitted: true,
             usern : username
@@ -108,7 +108,7 @@ export default class Main extends Component {
         }
     ]
     render() {
-        console.log(this.state.usern)
+        // console.log(this.state.usern)
         if(this.state.isSubmitted){
             return <div>
                 <User name={this.state.usern.toLowerCase()}/>

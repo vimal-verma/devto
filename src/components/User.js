@@ -15,18 +15,18 @@ export default class User extends Component {
         axios.get(`https://dev.to/api/users/by_username?url=${this.props.name}`)
           .then(res => {
             const persons = res.data;
-            console.log(persons)
+            // console.log(persons)
             this.setState({ persons, isLoaded :true });
           })
           if (!this.state.isLoaded) {
             axios.get(`https://dev.to/api/organizations/${this.props.name}`)
             .then(res => {
               const persons = res.data;
-              console.log(persons)
+              // console.log(persons)
               this.setState({ persons, isLoaded :true });
             })            
             .catch(err =>{
-              console.log(err)
+              // console.log(err)
               this.setState({ isLoaded: true })
             })          
           }

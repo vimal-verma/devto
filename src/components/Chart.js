@@ -17,7 +17,7 @@ class Chart extends Component {
         axios.get(`https://dev.to/api/articles/?username=${this.props.name}&per_page=1000`)
           .then(res => {
             const articles = res.data;
-            console.log(articles)
+            // console.log(articles)
             this.setState({ 
                 articles,
                 isLoaded :true ,
@@ -26,7 +26,7 @@ class Chart extends Component {
                 comments_count : articles.map(article=>{return article.comments_count})
 
             });
-            console.log(this.data)
+            // console.log(this.data)
           })
       }
       
@@ -39,7 +39,7 @@ class Chart extends Component {
         }
         else{
         let name = this.props.name;
-        console.log(name)
+        // console.log(name)
         if(this.state.articles.length < 2){
             if (this.state.articles.length === 1) {
             return (
@@ -100,7 +100,7 @@ class Chart extends Component {
                         onClick: (e, element) => {
                             if (element.length > 0) {
                             var ind = element[0]._index;
-                            console.log(ind);
+                            // console.log(ind);
                             var win = window.open(this.state.articles[ind].url, '_blank');
                             win.focus();
                             }

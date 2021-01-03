@@ -22,7 +22,7 @@ export default class User extends Component {
       axios(config)
           .then(res => {
             const persons = res.data;
-            console.log(persons)
+            // console.log(persons)
             this.setState({ persons, isLoaded :true });
           })
         document.title = `👨‍💻 Your's Dev Profile 👨‍💻`
