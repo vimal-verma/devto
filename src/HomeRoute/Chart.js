@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import axios from 'axios'
 import {Line} from 'react-chartjs-2';
 import Article from './Article';
-import Tag from './Tag';
+import Tag from '../components/Tag';
 
 
   

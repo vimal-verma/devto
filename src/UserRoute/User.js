@@ -2,8 +2,8 @@
 
 
 import React, { Component } from 'react'
-import Footer from './Footer'
-import Nav from './Nav'
+import Footer from '../components/Footer'
+import Nav from '../components/Nav'
 
 export default class Project extends Component {
     componentDidMount(){

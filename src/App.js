@@ -1,11 +1,11 @@
 import './App.css';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'; 
-import Home from './components/Home';
-import About from './components/About'
-import Project from './components/Project'
-import Error from './components/Error'
-import Api from './Api/Home'
-import Userroute from './components/Userroute'
+import Home from './HomeRoute/Home';
+import About from './AboutRoute/About'
+import user from './UserRoute/User'
+import Error from './ErrorRoute/Error'
+import Api from './ApiRoute/Home'
+import Userroute from './UserRoute/Usersroute'
 
 function App() {
   return (
@@ -15,7 +15,7 @@ function App() {
         <Route exact path='/' component={Home}></Route> 
         <Route exact path='/about' component={About}></Route> 
         <Route exact path='/user/:username' component={Userroute}></Route> 
-        <Route exact path='/user' component={Project}></Route>
+        <Route exact path='/user' component={user}></Route>
         <Route exact path='/api' component={Api}></Route>
         <Route path="" component={Error} />
       </Switch> 

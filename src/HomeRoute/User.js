@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import axios from 'axios'
 import Chart from './Chart'
-import Share from './Share'
+import Share from '../components/Share'
 import ReactTooltip from 'react-tooltip'
 import Orguser from './Orguser'
 

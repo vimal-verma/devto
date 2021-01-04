@@ -120,10 +120,10 @@ class Tag extends Component {
                     <h1>{user} is using {numoftag} Tags in {articlesLenth} articles</h1>
                 </div>
                 <div className="devuser">
-                    <h1>{user} articles got Total {numofLikes} Reactions in {articlesLenth} articles</h1>
+                    <h1>{user}'s articles got Total {numofLikes} Reactions in {articlesLenth} articles</h1>
                 </div>
                 <div className="devuser">
-                    <h1>{user} articles received Total {numofComments} comments in {articlesLenth} articles</h1>
+                    <h1>{user}'s articles received Total {numofComments} comments in {articlesLenth} articles</h1>
                 </div>
             </div>
             </div>
