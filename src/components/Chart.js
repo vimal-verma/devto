@@ -21,16 +21,23 @@ class Chart extends Component {
             this.setState({ 
                 articles,
                 isLoaded :true ,
-                labels : articles.reverse().map(article=>{return article.id}),
-                public_reactions_count : articles.map(article=>{return article.public_reactions_count}),
-                comments_count : articles.map(article=>{return article.comments_count})
-
             });
-            // console.log(this.data)
+            if(res.data.length===1000){
+                axios.get(`https://dev.to/api/articles/?username=${this.props.name}&per_page=1000&page=2`)
+                .then(res => {
+                  const articles1 = res.data;
+                  this.setState({
+                      articles :[...articles1.reverse(), ...this.state.articles].reverse()
+                  });
+                })
+              }
           })
       }
-      
     render() {
+        var labels = this.state.articles.reverse().map(article=>{return article.id})
+        var public_reactions_count = this.state.articles.map(article=>{return article.public_reactions_count})
+        var comments_count = this.state.articles.map(article=>{return article.comments_count})
+        console.log(this.state.articles)
         if(!this.state.isLoaded){
             return <div className="high">
             <h1>articles is Loading........</h1>
@@ -57,7 +64,7 @@ class Chart extends Component {
                 <Article article={this.state.articles}/>
                 <Line
                     data={{
-                        labels: this.state.labels,
+                        labels: labels,
                         datasets: [
                         {
                             label: 'Post Reaction',
@@ -66,7 +73,7 @@ class Chart extends Component {
                             backgroundColor: 'rgba(255,255,10,1)',
                             borderColor: 'rgba(255,255,255,1)',
                             borderWidth: 2,
-                            data: this.state.public_reactions_count
+                            data: public_reactions_count
                         },
                         {
                             label: 'Post Comments',
@@ -75,7 +82,7 @@ class Chart extends Component {
                             backgroundColor: 'rgba(0,100,192,1)',
                             borderColor: 'rgba(0,255,255,1)',
                             borderWidth: 2,
-                            data: this.state.comments_count
+                            data: comments_count
                         }
                         ]
                     }}
