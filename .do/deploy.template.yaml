@@ -4,5 +4,5 @@ spec:
   - build_command: npm install && npm run build
     git:
       branch: master
-      repo_clone_url: https://github.com/vimalverma558/devto.git
+      repo_clone_url: https://github.com/vimal-verma/devto.git
     name: devto

@@ -32,7 +32,7 @@ export default class User extends Component {
           }
         document.title = `👨‍💻 ${this.props.name}'s Dev Profile 👨‍💻`
         const favicon = document.getElementById("favicon");
-        favicon.href = `https://logo.letskhabar.com/name?name=${this.props.name}&bgc=yellow&col=Black`;
+        favicon.href = `https://logo.vdev.in/name?name=${this.props.name}&bgc=yellow&col=Black`;
       }
       
     render() {

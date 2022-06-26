@@ -6,7 +6,7 @@ export default class Error extends Component {
     componentDidMount(){
         document.title = `👨‍💻Error 404 👨‍💻`
         const favicon = document.getElementById("favicon");
-        favicon.href = `https://logo.letskhabar.com/name?name=D&bgc=yellow&col=Black`;
+        favicon.href = `https://logo.vdev.in/name?name=D&bgc=yellow&col=Black`;
       }
     render() {
         return (

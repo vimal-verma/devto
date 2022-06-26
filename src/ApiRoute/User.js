@@ -27,7 +27,7 @@ export default class User extends Component {
           })
         document.title = `👨‍💻 Your's Dev Profile 👨‍💻`
         const favicon = document.getElementById("favicon");
-        favicon.href = `https://logo.letskhabar.com/name?name=Y&bgc=yellow&col=Black`;
+        favicon.href = `https://logo.vdev.in/name?name=Y&bgc=yellow&col=Black`;
       }
       
     render() {

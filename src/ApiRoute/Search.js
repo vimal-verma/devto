@@ -13,7 +13,7 @@ export default class Search extends Component {
       componentDidMount(){
         document.title = `👨‍💻 DevTo App 👨‍💻`
         const favicon = document.getElementById("favicon");
-        favicon.href = `https://logo.letskhabar.com/name?name=D&bgc=yellow&col=Black`;
+        favicon.href = `https://logo.vdev.in/name?name=D&bgc=yellow&col=Black`;
       }
       mySubmitHandler = (event) => {
         event.preventDefault();
